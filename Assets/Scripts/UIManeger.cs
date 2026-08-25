@@ -7,6 +7,12 @@ public class UIManeger : MonoBehaviour
     private TMP_Text NotiText;
     public static UIManeger Instance;
 
+    [SerializeField]
+    private GameObject RestartButton;
+
+    [SerializeField]
+    private Player player;
+
     void Awake()
     {
         Instance = this;
@@ -24,5 +30,19 @@ public class UIManeger : MonoBehaviour
     public void ShowNotiText(string s)
     {
         NotiText.text = s;
+    }
+
+    public void restart()
+    {
+        player.transform.position = new Vector3(0f ,90f ,-85f);
+        player.Hp = 100;
+        ShowNotiText("Restart");
+        Time.timeScale = 1f;
+        ShowHideRestartButton(false);
+    }
+
+    public void ShowHideRestartButton(bool flag)
+    {
+        RestartButton.SetActive(flag);
     }
 }

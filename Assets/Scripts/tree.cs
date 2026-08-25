@@ -26,7 +26,10 @@ public class tree : MonoBehaviour
 
         if(player.Hp <= 0 )
         {
-            UIManeger.Instance.ShowNotiText($"You are Dead!!\nGame Over");
+            UIManeger.Instance.ShowNotiText($"You are Dead!!\nPoint: {player.Point}");
+
+            Time.timeScale = 0f;
+            UIManeger.Instance.ShowHideRestartButton(true);
         }
     }
 
