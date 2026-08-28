@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Finish : MonoBehaviour
+public class OutMap : MonoBehaviour
 {
     void Start()
     {
@@ -13,7 +12,6 @@ public class Finish : MonoBehaviour
 
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         Player p = other.GetComponent<Player>();
@@ -21,7 +19,7 @@ public class Finish : MonoBehaviour
         if(p == null)
             return;
 
-        UIManeger.Instance.ShowNotiText($"You Win!!\nPoint: {p.Point}");
+        UIManeger.Instance.ShowNotiText($"You are Dead!!\nPoint: {p.Point}");
         Time.timeScale = 0f;
         
         UIManeger.Instance.ShowHideRestartButton(true);

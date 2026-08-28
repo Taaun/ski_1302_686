@@ -34,7 +34,7 @@ public class UIManeger : MonoBehaviour
 
     public void restart()
     {
-        player.transform.position = new Vector3(0f ,90f ,-85f);
+        player.transform.position = new Vector3(0f ,87f ,-85f);
         player.Hp = 100;
         ShowNotiText("Restart");
         Time.timeScale = 1f;
